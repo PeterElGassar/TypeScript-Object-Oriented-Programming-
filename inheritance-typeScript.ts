@@ -1,5 +1,7 @@
 class Car {
   modelName: string;
+  protected license: string = "abc-123";
+  
   constructor(brand: string) {
     this.modelName = brand;
   }
@@ -17,6 +19,10 @@ class BMW extends Car {
   move(distance: number = 10): string {
     return super.move(distance);
   }
+
+  showLicense(): string {
+    return this.license;
+  }
 }
 
 class Toyota extends Car {
@@ -27,12 +33,13 @@ class Toyota extends Car {
   move(distance: number = 10): string {
     return super.move(distance);
   }
+
+  showLicense(): string {
+   return this.license;
+ }
 }
 
 const bmwCar = new BMW("Bmw 523i");
 console.log(bmwCar.modelName);
 console.log(bmwCar.move(20));
-
-const toyotaCar = new Toyota("Land Cruiser");
-console.log(toyotaCar.modelName);
-console.log(toyotaCar.move(130));
+console.log(bmwCar);
